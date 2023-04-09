@@ -1,41 +1,43 @@
-import { useAdminStore } from "medusa-react"
-import React, { useState } from "react"
+import { useAdminStore } from "medusa-react";
+import React, { useState } from "react";
 
-import { useFeatureFlag } from "../../../providers/feature-flag-provider"
-import BuildingsIcon from "../../fundamentals/icons/buildings-icon"
-import CartIcon from "../../fundamentals/icons/cart-icon"
-import CashIcon from "../../fundamentals/icons/cash-icon"
-import GearIcon from "../../fundamentals/icons/gear-icon"
-import GiftIcon from "../../fundamentals/icons/gift-icon"
-import SaleIcon from "../../fundamentals/icons/sale-icon"
-import TagIcon from "../../fundamentals/icons/tag-icon"
-import SwatchIcon from "../../fundamentals/icons/swatch-icon"
-import UsersIcon from "../../fundamentals/icons/users-icon"
-import SidebarMenuItem from "../../molecules/sidebar-menu-item"
-import UserMenu from "../../molecules/user-menu"
+import { useFeatureFlag } from "../../../providers/feature-flag-provider";
+import BuildingsIcon from "../../fundamentals/icons/buildings-icon";
+import CartIcon from "../../fundamentals/icons/cart-icon";
+import CashIcon from "../../fundamentals/icons/cash-icon";
+import GearIcon from "../../fundamentals/icons/gear-icon";
+import GiftIcon from "../../fundamentals/icons/gift-icon";
+import SaleIcon from "../../fundamentals/icons/sale-icon";
+import TagIcon from "../../fundamentals/icons/tag-icon";
+import SwatchIcon from "../../fundamentals/icons/swatch-icon";
+import UsersIcon from "../../fundamentals/icons/users-icon";
+import SidebarMenuItem from "../../molecules/sidebar-menu-item";
+import UserMenu from "../../molecules/user-menu";
+import GalleryIcon from "../../fundamentals/icons/gallery-icon/gallery-icon";
+import EyeIcon from "../../fundamentals/icons/eye-icon";
 
-const ICON_SIZE = 20
+const ICON_SIZE = 20;
 
 const Sidebar: React.FC = () => {
-  const [currentlyOpen, setCurrentlyOpen] = useState(-1)
+  const [currentlyOpen, setCurrentlyOpen] = useState(-1);
 
-  const { isFeatureEnabled } = useFeatureFlag()
-  const { store } = useAdminStore()
+  const { isFeatureEnabled } = useFeatureFlag();
+  const { store } = useAdminStore();
 
   const triggerHandler = () => {
-    const id = triggerHandler.id++
+    const id = triggerHandler.id++;
     return {
       open: currentlyOpen === id,
       handleTriggerClick: () => setCurrentlyOpen(id),
-    }
-  }
+    };
+  };
   // We store the `id` counter on the function object, as a state creates
   // infinite updates, and we do not want the variable to be free floating.
-  triggerHandler.id = 0
+  triggerHandler.id = 0;
 
   const inventoryEnabled =
     isFeatureEnabled("inventoryService") &&
-    isFeatureEnabled("stockLocationService")
+    isFeatureEnabled("stockLocationService");
 
   return (
     <div className="min-w-sidebar max-w-sidebar bg-gray-0 border-grey-20 py-base px-base h-screen overflow-y-auto border-r">
@@ -107,6 +109,18 @@ const Sidebar: React.FC = () => {
             text={"Pricing"}
           />
           <SidebarMenuItem
+            pageLink={"/a/gallery"}
+            icon={<GalleryIcon size={ICON_SIZE} />}
+            triggerHandler={triggerHandler}
+            text={"Gallery"}
+          />
+          <SidebarMenuItem
+            pageLink={"/online-store"}
+            icon={<EyeIcon size={ICON_SIZE} />}
+            triggerHandler={triggerHandler}
+            text={"Online store"}
+          />
+          <SidebarMenuItem
             pageLink={"/a/settings"}
             icon={<GearIcon size={ICON_SIZE} />}
             triggerHandler={triggerHandler}
@@ -115,7 +129,7 @@ const Sidebar: React.FC = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

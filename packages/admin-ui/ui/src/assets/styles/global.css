@@ -454,3 +454,12 @@
 .remove-number-spinner {
   -moz-appearance: textfield;
 }
+/* Code Edittor */
+.cm-theme{
+  height: -moz-calc(100% - 100px);
+  height: -webkit-calc(100% - 100px);
+  height: calc(100% - 90px);
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0.25rem;
+}

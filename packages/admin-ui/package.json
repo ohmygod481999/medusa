@@ -1,11 +1,11 @@
 {
-  "name": "admin-ui-longvb",
-  "author": "longvb",
+  "name": "@medusajs/admin-ui",
+  "author": "Kasper Kristensen <kasper@medusajs.com>",
   "license": "MIT",
-  "version": "1.8.2",
+  "version": "1.8.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ohmygod481999/medusa",
+    "url": "https://github.com/medusajs/medusa.git",
     "directory": "packages/admin-ui"
   },
   "exports": {
@@ -20,15 +20,18 @@
     "ui"
   ],
   "scripts": {
-    "dev": "vite -c vite.config.dev.ts --port 7001",
+    "dev": "vite -c vite.config.dev.ts --port 7001 --host",
     "build": "tsc --build",
-    "vite:build": "vite -c vite.config.dev.ts build",
-    "preview": "vite -c vite.config.dev.ts preview",
     "test:ui": "vitest --config vite.config.dev.ts",
     "test:ui:once": "vitest --config vite.config.dev.ts --run",
     "test": "echo \"Tests disabled temporarily\""
   },
   "dependencies": {
+    
+    "@codemirror/lang-html": "^6.4.2",
+    "@codemirror/lang-javascript": "^6.1.4",
+    "@codemirror/language": "^6.6.0",
+    "@codemirror/legacy-modes": "^6.3.2",
     "@hookform/error-message": "^2.0.1",
     "@radix-ui/react-accordion": "^1.0.1",
     "@radix-ui/react-avatar": "^1.0.1",
@@ -46,6 +49,8 @@
     "@tanstack/react-query": "4.22.0",
     "@tanstack/react-table": "^8.7.9",
     "@vitejs/plugin-react": "^3.1.0",
+    "@uiw/codemirror-theme-dracula": "^4.19.9",
+    "@uiw/react-codemirror": "^4.19.9",
     "autoprefixer": "^10.4.13",
     "clsx": "^1.2.1",
     "copy-to-clipboard": "^3.3.1",
@@ -78,7 +83,9 @@
     "tailwindcss": "3.2.2",
     "tailwindcss-radix": "^2.7.0",
     "type-fest": "^3.6.0",
-    "vite": "^4.1.4"
+    "vite": "^4.1.4",
+    "react-sortablejs": "^6.1.4",
+    "sortablejs": "^1.15.0"
   },
   "devDependencies": {
     "@medusajs/medusa": "1.8.0",

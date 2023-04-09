@@ -1,38 +1,39 @@
-import { DndProvider } from "react-dnd"
-import { HTML5Backend } from "react-dnd-html5-backend"
-import { useHotkeys } from "react-hotkeys-hook"
-import { Route, Routes, useNavigate } from "react-router-dom"
-import PrivateRoute from "../components/private-route"
-import SEO from "../components/seo"
-import Layout from "../components/templates/layout"
-import { WRITE_KEY } from "../constants/analytics"
-import Collections from "../domain/collections"
-import Customers from "../domain/customers"
-import Discounts from "../domain/discounts"
-import GiftCards from "../domain/gift-cards"
-import Inventory from "../domain/inventory"
-import Oauth from "../domain/oauth"
-import Orders from "../domain/orders"
-import DraftOrders from "../domain/orders/draft-orders"
-import Pricing from "../domain/pricing"
-import ProductsRoute from "../domain/products"
-import PublishableApiKeys from "../domain/publishable-api-keys"
-import SalesChannels from "../domain/sales-channels"
-import Settings from "../domain/settings"
-import { AnalyticsProvider } from "../providers/analytics-provider"
-import ProductCategories from "../domain/product-categories"
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { useHotkeys } from "react-hotkeys-hook";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import PrivateRoute from "../components/private-route";
+import SEO from "../components/seo";
+import Layout from "../components/templates/layout";
+import { WRITE_KEY } from "../constants/analytics";
+import Collections from "../domain/collections";
+import Customers from "../domain/customers";
+import Discounts from "../domain/discounts";
+import GiftCards from "../domain/gift-cards";
+import Inventory from "../domain/inventory";
+import Oauth from "../domain/oauth";
+import Orders from "../domain/orders";
+import DraftOrders from "../domain/orders/draft-orders";
+import Pricing from "../domain/pricing";
+import ProductsRoute from "../domain/products";
+import PublishableApiKeys from "../domain/publishable-api-keys";
+import SalesChannels from "../domain/sales-channels";
+import Settings from "../domain/settings";
+import { AnalyticsProvider } from "../providers/analytics-provider";
+import ProductCategories from "../domain/product-categories";
+import Gallery from "../domain/gallery";
 
 const IndexPage = () => {
-  const navigate = useNavigate()
-  useHotkeys("g + o", () => navigate("/a/orders"))
-  useHotkeys("g + p", () => navigate("/a/products"))
+  const navigate = useNavigate();
+  useHotkeys("g + o", () => navigate("/a/orders"));
+  useHotkeys("g + p", () => navigate("/a/products"));
 
   return (
     <PrivateRoute>
       <DashboardRoutes />
     </PrivateRoute>
-  )
-}
+  );
+};
 
 const DashboardRoutes = () => {
   return (
@@ -54,6 +55,7 @@ const DashboardRoutes = () => {
             <Route path="discounts/*" element={<Discounts />} />
             <Route path="customers/*" element={<Customers />} />
             <Route path="pricing/*" element={<Pricing />} />
+            <Route path="gallery/*" element={<Gallery />} />
             <Route path="settings/*" element={<Settings />} />
             <Route path="sales-channels/*" element={<SalesChannels />} />
             <Route
@@ -65,7 +67,7 @@ const DashboardRoutes = () => {
         </Layout>
       </DndProvider>
     </AnalyticsProvider>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
