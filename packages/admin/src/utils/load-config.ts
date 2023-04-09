@@ -9,9 +9,14 @@ export const loadConfig = () => {
 
   const plugin = configModule.plugins.find(
     (p) =>
-      (typeof p === "string" && p === "@medusajs/admin") ||
-      (typeof p === "object" && p.resolve === "@medusajs/admin")
+      (typeof p === "string" && p === "admin-longvb") ||
+      (typeof p === "object" && p.resolve === "admin-longvb")
   )
+  // const plugin = configModule.plugins.find(
+  //   (p) =>
+  //     (typeof p === "string" && p === "@medusajs/admin") ||
+  //     (typeof p === "object" && p.resolve === "@medusajs/admin")
+  // )
 
   let defaultConfig: PluginOptions = {
     serve: true,

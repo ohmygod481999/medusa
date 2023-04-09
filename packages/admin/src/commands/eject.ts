@@ -11,7 +11,8 @@ const DEFAULT_DESTINATION = "medusa-admin-ui"
 export default async function eject({
   outDir = DEFAULT_DESTINATION,
 }: EjectParams) {
-  const projectPath = require.resolve("@medusajs/admin-ui")
+  const projectPath = require.resolve("admin-ui-longvb")
+  // const projectPath = require.resolve("@medusajs/admin-ui")
   const uiPath = path.join(projectPath, "..", "..", "ui")
 
   const packageJsonPath = path.join(projectPath, "..", "..", "package.json")

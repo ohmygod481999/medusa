@@ -1,11 +1,11 @@
 {
-  "name": "@medusajs/admin-ui",
-  "author": "Kasper Kristensen <kasper@medusajs.com>",
+  "name": "admin-ui-longvb",
+  "author": "longvb",
   "license": "MIT",
-  "version": "1.8.0",
+  "version": "1.8.2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa.git",
+    "url": "https://github.com/ohmygod481999/medusa",
     "directory": "packages/admin-ui"
   },
   "exports": {
@@ -22,6 +22,8 @@
   "scripts": {
     "dev": "vite -c vite.config.dev.ts --port 7001",
     "build": "tsc --build",
+    "vite:build": "vite -c vite.config.dev.ts build",
+    "preview": "vite -c vite.config.dev.ts preview",
     "test:ui": "vitest --config vite.config.dev.ts",
     "test:ui:once": "vitest --config vite.config.dev.ts --run",
     "test": "echo \"Tests disabled temporarily\""

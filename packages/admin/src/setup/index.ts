@@ -1,4 +1,5 @@
-import { build } from "@medusajs/admin-ui"
+import { build } from "admin-ui-longvb"
+// import { build } from "@medusajs/admin-ui"
 import fse from "fs-extra"
 import ora from "ora"
 import { EOL } from "os"

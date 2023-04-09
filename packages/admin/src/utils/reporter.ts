@@ -1,6 +1,7 @@
 import colors from "picocolors"
 
-const PREFIX = colors.cyan("[@medusajs/admin]")
+// const PREFIX = colors.cyan("[@medusajs/admin]")
+const PREFIX = colors.cyan("[admin-longvb]")
 
 export const reporter = {
   panic: (err: Error) => {

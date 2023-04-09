@@ -1,4 +1,5 @@
-import { AdminBuildConfig, build as buildAdmin } from "@medusajs/admin-ui"
+// import { AdminBuildConfig, build as buildAdmin } from "@medusajs/admin-ui"
+import { AdminBuildConfig, build as buildAdmin } from "admin-ui-longvb"
 import dotenv from "dotenv"
 import fse from "fs-extra"
 import ora from "ora"
