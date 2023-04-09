@@ -1,6 +1,7 @@
 import { useAdminLogin } from "medusa-react"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
+import { ECOM_BACKEND_URL } from "../../../constants/ecom-backend-url"
 import InputError from "../../atoms/input-error"
 import Button from "../../fundamentals/button"
 import SigninInput from "../../molecules/input-signin"
@@ -47,8 +48,11 @@ const LoginCard = ({ toResetPassword }: LoginCardProps) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-col items-center">
         <h1 className="inter-xlarge-semibold text-grey-90 mb-large text-[20px]">
-          Log in to Medusa ahihi 2
+          Log in to Medusa ahihi 3
         </h1>
+        <p>
+          {ECOM_BACKEND_URL}
+        </p>
         <div>
           <SigninInput
             placeholder="Email"

@@ -7,7 +7,7 @@ import { resolve } from "path"
 import { loadConfig, reporter, validatePath } from "../utils"
 
 export default async function setupAdmin() {
-  const { path, outDir, serve, autoRebuild } = loadConfig()
+  const { path, outDir, serve, autoRebuild, ecomBackend } = loadConfig()
 
   // If the user has not specified that the admin UI should be served,
   // we should not build it. Furthermore, if the user has not specified that they want
@@ -54,6 +54,7 @@ export default async function setupAdmin() {
        * is the case, we should always set the backend to `undefined`.
        */
       backend: undefined,
+      ecomBackend: ecomBackend,
     },
   }
 

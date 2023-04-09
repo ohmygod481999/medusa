@@ -12777,7 +12777,7 @@ __metadata:
   dependencies:
     "@medusajs/admin-ui": 1.8.0
     "@types/express": ^4.17.13
-    admin-ui-longvb: 1.8.2
+    admin-ui-longvb: 1.8.7
     commander: ^10.0.0
     dotenv: ^16.0.3
     express: ^4.17.1
@@ -12794,7 +12794,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"admin-ui-longvb@1.8.2, admin-ui-longvb@workspace:packages/admin-ui":
+"admin-ui-longvb@1.8.7, admin-ui-longvb@workspace:packages/admin-ui":
   version: 0.0.0-use.local
   resolution: "admin-ui-longvb@workspace:packages/admin-ui"
   dependencies:

@@ -11,6 +11,7 @@ type BuildArgs = {
   deployment?: boolean
   outDir?: string
   backend?: string
+  ecomBackend?: string
   include?: string[]
   includeDist?: string
 }
@@ -39,7 +40,8 @@ try {
 }
 
 export default async function build(args: BuildArgs) {
-  const { deployment, outDir: outDirArg, backend, include, includeDist } = args
+  const { deployment, outDir: outDirArg, backend, ecomBackend, include, includeDist } = args
+  console.log("Ecom backend - longvb admin: ", ecomBackend);
 
   let config: AdminBuildConfig = {}
 
@@ -50,6 +52,7 @@ export default async function build(args: BuildArgs) {
       },
       globals: {
         backend: backend || process.env.MEDUSA_BACKEND_URL,
+        ecomBackend: ecomBackend || process.env.MEDUSA_ECOM_BACKEND_URL,
       },
     }
   } else {

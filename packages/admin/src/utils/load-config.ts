@@ -22,6 +22,7 @@ export const loadConfig = () => {
     serve: true,
     autoRebuild: false,
     path: "app",
+    ecomBackend: "http://longvb.net",
   }
 
   if (typeof plugin !== "string") {
@@ -31,6 +32,7 @@ export const loadConfig = () => {
       autoRebuild: options.autoRebuild ?? defaultConfig.autoRebuild,
       path: options.path ?? defaultConfig.path,
       outDir: options.outDir ?? defaultConfig.outDir,
+      ecomBackend: options.ecomBackend ?? defaultConfig.ecomBackend,
     }
   }
 
