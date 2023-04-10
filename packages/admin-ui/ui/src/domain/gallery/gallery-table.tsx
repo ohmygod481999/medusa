@@ -12,6 +12,7 @@ import {
 import { useGalleryListTableColumns } from "../../components/templates/gallery-table/use-gallery-list-columns";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { ECOM_BACKEND_URL } from "../../constants/ecom-backend-url";
 
 /**
  * Default filtering config for querying price lists endpoint.
@@ -31,7 +32,7 @@ const GalleryTable = (props: any) => {
   const [count, setCount] = useState<number>(0);
 
   useEffect(() => {
-    axios.get("http://localhost:3005/api-admin/gallery").then(({ data }) => {
+    axios.get(`${ECOM_BACKEND_URL}/api-admin/gallery`).then(({ data }) => {
       setGallery(data.gallery);
       setCount(data.gallery.length);
     });

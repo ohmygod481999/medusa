@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { ECOM_BACKEND_URL } from "../../../constants/ecom-backend-url";
 import useNotification from "../../../hooks/use-notification";
 
 const OnlineStoreOverview = () => {
@@ -10,7 +11,7 @@ const OnlineStoreOverview = () => {
   const notification = useNotification();
   useEffect(() => {
     axios
-      .get("http://longvb.net/api-admin/themes/my-templates")
+      .get(`${ECOM_BACKEND_URL}/api-admin/themes/my-templates`)
       .then(({ data }) => {
         setCurrentTemplate(data.current_template);
         setTemplates(data.templates);
@@ -18,7 +19,7 @@ const OnlineStoreOverview = () => {
   }, [refresh]);
   const changeCurrentTheme = (id: string) => {
     axios
-      .post("http://longvb.net/api-admin/themes/use-template", {
+      .post(`${ECOM_BACKEND_URL}/api-admin/themes/use-template`, {
         template_id: id,
       })
       .then(() => {

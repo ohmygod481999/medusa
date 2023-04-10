@@ -7,6 +7,7 @@ import UploadIcon from "../../components/fundamentals/icons/upload-icon";
 import BodyCard from "../../components/organisms/body-card";
 import ImageModal from "../../components/organisms/image-modal";
 import UploadImageModal from "../../components/organisms/upload-img-modal";
+import { ECOM_BACKEND_URL } from "../../constants/ecom-backend-url";
 import useNotification from "../../hooks/use-notification";
 import GalleryTable from "./gallery-table";
 
@@ -49,7 +50,7 @@ const GalleryIndex = () => {
       const formData = new FormData();
       formData.append("file", file[0]);
       axios
-        .post("http://longvb.net/api-admin/gallery", formData)
+        .post(`${ECOM_BACKEND_URL}/api-admin/gallery`, formData)
         .then(() => {
           console.log("Success");
           setRefresh(!refresh);

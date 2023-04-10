@@ -1042,83 +1042,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/admin-ui@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@medusajs/admin-ui@workspace:."
-  dependencies:
-    "@codemirror/lang-html": ^6.4.2
-    "@codemirror/lang-javascript": ^6.1.4
-    "@codemirror/language": ^6.6.0
-    "@codemirror/legacy-modes": ^6.3.2
-    "@hookform/error-message": ^2.0.1
-    "@medusajs/medusa": 1.8.0
-    "@medusajs/types": 1.8.0
-    "@radix-ui/react-accordion": ^1.0.1
-    "@radix-ui/react-avatar": ^1.0.1
-    "@radix-ui/react-collapsible": ^1.0.1
-    "@radix-ui/react-dialog": ^1.0.2
-    "@radix-ui/react-dropdown-menu": ^2.0.2
-    "@radix-ui/react-popover": ^1.0.3
-    "@radix-ui/react-radio-group": ^1.1.1
-    "@radix-ui/react-select": ^1.2.0
-    "@radix-ui/react-switch": ^1.0.1
-    "@radix-ui/react-tooltip": ^1.0.3
-    "@segment/analytics-next": ^1.51.1
-    "@tailwindcss/forms": ^0.5.3
-    "@tailwindcss/line-clamp": ^0.4.2
-    "@tanstack/react-query": 4.22.0
-    "@tanstack/react-table": ^8.7.9
-    "@testing-library/jest-dom": ^5.16.5
-    "@testing-library/react": ^14.0.0
-    "@testing-library/user-event": ^14.4.3
-    "@types/pluralize": ^0.0.29
-    "@types/react": ^18.0.27
-    "@types/react-datepicker": ^4.10.0
-    "@types/react-dom": ^18.0.10
-    "@types/react-table": ^7.7.9
-    "@uiw/codemirror-theme-dracula": ^4.19.9
-    "@uiw/react-codemirror": ^4.19.9
-    "@vitejs/plugin-react": ^3.1.0
-    autoprefixer: ^10.4.13
-    clsx: ^1.2.1
-    copy-to-clipboard: ^3.3.1
-    emoji-picker-react: ^4.4.3
-    framer-motion: ^9.1.6
-    medusa-react: 5.0.0
-    moment: ^2.29.4
-    pluralize: ^8.0.0
-    postcss: ^8.4.21
-    query-string: ^8.1.0
-    react: ^18.2.0
-    react-collapsible: ^2.8.3
-    react-country-flag: ^3.0.2
-    react-currency-input-field: ^3.6.8
-    react-datepicker: ^4.8.0
-    react-dnd: ^16.0.1
-    react-dnd-html5-backend: ^16.0.1
-    react-dom: ^18.2.0
-    react-helmet: ^6.0.0
-    react-highlight-words: ^0.18.0
-    react-hook-form: 7.38.0
-    react-hot-toast: ^2.4.0
-    react-hotkeys-hook: ^3.4.7
-    react-json-tree: ^0.17.0
-    react-jwt: ^1.1.4
-    react-nestable: ^2.0.0
-    react-router-dom: ^6.8.0
-    react-select: ^5.5.4
-    react-sortablejs: ^6.1.4
-    react-table: ^7.7.0
-    sortablejs: ^1.15.0
-    tailwindcss: 3.2.2
-    tailwindcss-radix: ^2.7.0
-    type-fest: ^3.6.0
-    typescript: ^4.9.3
-    vite: ^4.1.4
-    vitest: ^0.28.5
-  languageName: unknown
-  linkType: soft
-
 "@medusajs/medusa-cli@npm:1.3.9":
   version: 1.3.9
   resolution: "@medusajs/medusa-cli@npm:1.3.9"
@@ -3953,6 +3876,83 @@ __metadata:
   checksum: b5c54e736af5ed753911c6752fafd02d0a74cf4d55be606bd81fe71faba4f986dc090952329931ac2aba165803fd0005c59eeef08f9c6c689e8dc420031f3df0
   languageName: node
   linkType: hard
+
+"admin-ui-longvb@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "admin-ui-longvb@workspace:."
+  dependencies:
+    "@codemirror/lang-html": ^6.4.2
+    "@codemirror/lang-javascript": ^6.1.4
+    "@codemirror/language": ^6.6.0
+    "@codemirror/legacy-modes": ^6.3.2
+    "@hookform/error-message": ^2.0.1
+    "@medusajs/medusa": 1.8.0
+    "@medusajs/types": 1.8.0
+    "@radix-ui/react-accordion": ^1.0.1
+    "@radix-ui/react-avatar": ^1.0.1
+    "@radix-ui/react-collapsible": ^1.0.1
+    "@radix-ui/react-dialog": ^1.0.2
+    "@radix-ui/react-dropdown-menu": ^2.0.2
+    "@radix-ui/react-popover": ^1.0.3
+    "@radix-ui/react-radio-group": ^1.1.1
+    "@radix-ui/react-select": ^1.2.0
+    "@radix-ui/react-switch": ^1.0.1
+    "@radix-ui/react-tooltip": ^1.0.3
+    "@segment/analytics-next": ^1.51.1
+    "@tailwindcss/forms": ^0.5.3
+    "@tailwindcss/line-clamp": ^0.4.2
+    "@tanstack/react-query": 4.22.0
+    "@tanstack/react-table": ^8.7.9
+    "@testing-library/jest-dom": ^5.16.5
+    "@testing-library/react": ^14.0.0
+    "@testing-library/user-event": ^14.4.3
+    "@types/pluralize": ^0.0.29
+    "@types/react": ^18.0.27
+    "@types/react-datepicker": ^4.10.0
+    "@types/react-dom": ^18.0.10
+    "@types/react-table": ^7.7.9
+    "@uiw/codemirror-theme-dracula": ^4.19.9
+    "@uiw/react-codemirror": ^4.19.9
+    "@vitejs/plugin-react": ^3.1.0
+    autoprefixer: ^10.4.13
+    clsx: ^1.2.1
+    copy-to-clipboard: ^3.3.1
+    emoji-picker-react: ^4.4.3
+    framer-motion: ^9.1.6
+    medusa-react: 5.0.0
+    moment: ^2.29.4
+    pluralize: ^8.0.0
+    postcss: ^8.4.21
+    query-string: ^8.1.0
+    react: ^18.2.0
+    react-collapsible: ^2.8.3
+    react-country-flag: ^3.0.2
+    react-currency-input-field: ^3.6.8
+    react-datepicker: ^4.8.0
+    react-dnd: ^16.0.1
+    react-dnd-html5-backend: ^16.0.1
+    react-dom: ^18.2.0
+    react-helmet: ^6.0.0
+    react-highlight-words: ^0.18.0
+    react-hook-form: 7.38.0
+    react-hot-toast: ^2.4.0
+    react-hotkeys-hook: ^3.4.7
+    react-json-tree: ^0.17.0
+    react-jwt: ^1.1.4
+    react-nestable: ^2.0.0
+    react-router-dom: ^6.8.0
+    react-select: ^5.5.4
+    react-sortablejs: ^6.1.4
+    react-table: ^7.7.0
+    sortablejs: ^1.15.0
+    tailwindcss: 3.2.2
+    tailwindcss-radix: ^2.7.0
+    type-fest: ^3.6.0
+    typescript: ^4.9.3
+    vite: ^4.1.4
+    vitest: ^0.28.5
+  languageName: unknown
+  linkType: soft
 
 "agent-base@npm:6, agent-base@npm:^6.0.2":
   version: 6.0.2

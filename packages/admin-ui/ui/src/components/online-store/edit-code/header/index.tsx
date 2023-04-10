@@ -3,6 +3,7 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import useNotification from "../../../../hooks/use-notification";
 import { useOnlineStore } from "../../../../constants/online-store";
+import { ECOM_BACKEND_URL } from "../../../../constants/ecom-backend-url";
 
 export const EditCodeHeader = () => {
   const { fileValue, selectedFile, selectedFiles, edited, setEdited } =
@@ -14,7 +15,7 @@ export const EditCodeHeader = () => {
     try {
       for (let i = 0; i < selectedFiles.length; i++) {
         axios.put(
-          `http://longvb.net/api-admin/code-editor/file/${encodeURIComponent(
+          `${ECOM_BACKEND_URL}/api-admin/code-editor/file/${encodeURIComponent(
             selectedFiles[i].filePath
           )}`,
           {

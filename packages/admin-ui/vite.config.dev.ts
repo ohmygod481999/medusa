@@ -10,7 +10,7 @@ dns.setDefaultResultOrder("verbatim")
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/admin',
+  base: '/app',
   test: {
     environment: "jsdom",
     globals: true,
@@ -18,7 +18,7 @@ export default defineConfig({
   },
   root: "ui",
   define: {
-    __BASE__: JSON.stringify("/admin"),
+    __BASE__: JSON.stringify("/app"),
     __MEDUSA_BACKEND_URL__: JSON.stringify("http://medusa.longvb.net"),
     __ECOM_BACKEND_URL__: JSON.stringify("http://longvb.net"),
   },
