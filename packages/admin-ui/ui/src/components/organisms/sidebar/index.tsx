@@ -16,16 +16,16 @@ import UserMenu from "../../molecules/user-menu"
 import GalleryIcon from "../../fundamentals/icons/gallery-icon/gallery-icon"
 import EyeIcon from "../../fundamentals/icons/eye-icon"
 
-const ICON_SIZE = 20;
+const ICON_SIZE = 20
 
 const Sidebar: React.FC = () => {
-  const [currentlyOpen, setCurrentlyOpen] = useState(-1);
+  const [currentlyOpen, setCurrentlyOpen] = useState(-1)
 
-  const { isFeatureEnabled } = useFeatureFlag();
-  const { store } = useAdminStore();
+  const { isFeatureEnabled } = useFeatureFlag()
+  const { store } = useAdminStore()
 
   const triggerHandler = () => {
-    const id = triggerHandler.id++;
+    const id = triggerHandler.id++
     return {
       open: currentlyOpen === id,
       handleTriggerClick: () => setCurrentlyOpen(id),
@@ -33,11 +33,11 @@ const Sidebar: React.FC = () => {
   };
   // We store the `id` counter on the function object, as a state creates
   // infinite updates, and we do not want the variable to be free floating.
-  triggerHandler.id = 0;
+  triggerHandler.id = 0
 
   const inventoryEnabled =
     isFeatureEnabled("inventoryService") &&
-    isFeatureEnabled("stockLocationService");
+    isFeatureEnabled("stockLocationService")
 
   return (
     <div className="min-w-sidebar max-w-sidebar bg-gray-0 border-grey-20 py-base px-base h-screen overflow-y-auto border-r">
@@ -130,6 +130,6 @@ const Sidebar: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Sidebar;
+export default Sidebar
