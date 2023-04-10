@@ -29,8 +29,8 @@ const Sidebar: React.FC = () => {
     return {
       open: currentlyOpen === id,
       handleTriggerClick: () => setCurrentlyOpen(id),
-    };
-  };
+    }
+  }
   // We store the `id` counter on the function object, as a state creates
   // infinite updates, and we do not want the variable to be free floating.
   triggerHandler.id = 0
@@ -129,7 +129,7 @@ const Sidebar: React.FC = () => {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default Sidebar
