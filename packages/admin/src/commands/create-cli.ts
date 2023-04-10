@@ -16,6 +16,7 @@ export async function createCli(): Promise<Command> {
 
   buildCommand.option("-o, --out-dir <path>", "Output directory")
   buildCommand.option("-b, --backend <url>", "Backend URL")
+  buildCommand.option("-e, --ecomBackend <url>", "Ecom Backend URL")
   buildCommand.option(
     "-i, --include [paths...]]",
     "Paths to files that should be included in the build"

@@ -27,6 +27,7 @@ export type PluginOptions = {
    * @default false
    */
   autoRebuild?: boolean
+  ecomBackend?: string
 }
 
 type PluginObject = {

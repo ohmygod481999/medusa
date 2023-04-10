@@ -7,7 +7,9 @@ import { AdminDevConfig } from "./types/dev"
 import { getCustomViteConfig, getCustomViteDevConfig } from "./utils"
 
 async function build(options?: AdminBuildConfig) {
+  console.log("longvb-admin-ui, options: ", options)
   const config = getCustomViteConfig(options)
+  console.log("longvb-admin-ui, config: ", config)
 
   await vite.build(config).catch((_err) => {
     process.exit(1)
