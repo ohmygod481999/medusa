@@ -13,6 +13,8 @@ import SwatchIcon from "../../fundamentals/icons/swatch-icon"
 import UsersIcon from "../../fundamentals/icons/users-icon"
 import SidebarMenuItem from "../../molecules/sidebar-menu-item"
 import UserMenu from "../../molecules/user-menu"
+import GalleryIcon from "../../fundamentals/icons/gallery-icon/gallery-icon"
+import EyeIcon from "../../fundamentals/icons/eye-icon"
 
 const ICON_SIZE = 20
 
@@ -105,6 +107,18 @@ const Sidebar: React.FC = () => {
             icon={<CashIcon size={ICON_SIZE} />}
             triggerHandler={triggerHandler}
             text={"Pricing"}
+          />
+          <SidebarMenuItem
+            pageLink={"/a/gallery"}
+            icon={<GalleryIcon size={ICON_SIZE} />}
+            triggerHandler={triggerHandler}
+            text={"Gallery"}
+          />
+          <SidebarMenuItem
+            pageLink={"/online-store"}
+            icon={<EyeIcon size={ICON_SIZE} />}
+            triggerHandler={triggerHandler}
+            text={"Online store"}
           />
           <SidebarMenuItem
             pageLink={"/a/settings"}

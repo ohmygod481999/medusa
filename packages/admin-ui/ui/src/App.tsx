@@ -10,6 +10,7 @@ import Spinner from "./components/atoms/spinner"
 const NotFound = lazy(() => import("./pages/404"))
 const Dashboard = lazy(() => import("./pages/a"))
 const IndexPage = lazy(() => import("./pages/index"))
+const OnlineStore = lazy(() => import("./pages/online-store"))
 const InvitePage = lazy(() => import("./pages/invite"))
 const LoginPage = lazy(() => import("./pages/login"))
 const ResetPasswordPage = lazy(() => import("./pages/reset-password"))
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
     <>
       <Route path="/" element={<IndexPage />} />
       <Route path="a/*" element={<Dashboard />} />
+      <Route path="online-store/*" element={<OnlineStore />} />
       <Route path="invite" element={<InvitePage />} />
       <Route path="login" element={<LoginPage />} />
       <Route path="reset-password" element={<ResetPasswordPage />} />
