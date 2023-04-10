@@ -5,6 +5,7 @@ import { fileIcon } from "./icon";
 import { getFileType } from "../code-editor";
 import { useDebounce } from "../../../../hooks/use-debounce";
 import async from "react-select/dist/declarations/src/async/index";
+import { ECOM_BACKEND_URL } from "../../../../constants/ecom-backend-url";
 
 export const EditCodeSidebarLeft = (props: {}) => {
   const { setSelectedFiles, setSelectedFile, selectedFile, selectedFiles } =
@@ -17,7 +18,7 @@ export const EditCodeSidebarLeft = (props: {}) => {
   const deboundSearch = useDebounce(searchValue, 1000);
   useEffect(() => {
     axios
-      .get(`http://longvb.net/api-admin/code-editor/file-tree`)
+      .get(`${ECOM_BACKEND_URL}/api-admin/code-editor/file-tree`)
       .then(({ data }) => {
         setFileTree(data.fileTree);
       });
@@ -28,7 +29,7 @@ export const EditCodeSidebarLeft = (props: {}) => {
   const getFileContent = (fileName: string, filePath: string) => {
     axios
       .get(
-        `http://longvb.net/api-admin/code-editor/file/${encodeURIComponent(
+        `${ECOM_BACKEND_URL}/api-admin/code-editor/file/${encodeURIComponent(
           filePath
         )}`
       )

@@ -5,6 +5,7 @@ import { ComputerMonitorIcon } from "../online-store-icon";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import useNotification from "../../../hooks/use-notification";
+import { ECOM_BACKEND_URL } from "../../../constants/ecom-backend-url";
 
 export const OnlineStoreHeader = () => {
   const {
@@ -32,7 +33,7 @@ export const OnlineStoreHeader = () => {
   const save = () => {
     console.log(121212, currentSections);
     axios
-      .put(`http://longvb.net/api-admin/pages/${currentPage.id}`, {
+      .put(`${ECOM_BACKEND_URL}/api-admin/pages/${currentPage.id}`, {
         page_settings: {
           sections: [...currentSections],
         },

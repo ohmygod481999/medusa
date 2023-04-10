@@ -4,6 +4,7 @@ import { renderElement } from "./render-element";
 import axios from "axios";
 import { ReactSortable } from "react-sortablejs";
 import { useOnlineStore } from "../../../constants/online-store";
+import { ECOM_BACKEND_URL } from "../../../constants/ecom-backend-url";
 
 export const OnlineStoreSidebarLeft = (props: {}) => {
   const { currentPage, setSectionId, setCurrentSections, currentSections } =
@@ -13,14 +14,14 @@ export const OnlineStoreSidebarLeft = (props: {}) => {
 
   useEffect(() => {
     axios
-      .get(`http://longvb.net/api-admin/pages/${currentPage.id}`)
+      .get(`${ECOM_BACKEND_URL}/api-admin/pages/${currentPage.id}`)
       .then(({ data }) => {
         const sectionsData: [] = data.page["settings"].sections;
         setCurrentSections(sectionsData);
       });
   }, [currentPage.id]);
 
-  const scrollToSection = (ecomId) => {
+  const scrollToSection = (ecomId: string) => {
     setSectionactive(ecomId);
     setSectionId(ecomId);
     const iframe = document.querySelector("#iframe") as HTMLIFrameElement;

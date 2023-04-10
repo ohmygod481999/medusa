@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { ECOM_BACKEND_URL } from "../../../constants/ecom-backend-url";
 import { useOnlineStore } from "../../../constants/online-store";
 
 const OnlineStoreIframe = () => {
@@ -41,7 +42,7 @@ const OnlineStoreIframe = () => {
         style={{
           height: "100%",
         }}
-        src="http://longvb.net"
+        src={ECOM_BACKEND_URL}
         title="YouTube video player"
         frameBorder="0"
         width="100%"

@@ -1,5 +1,6 @@
 import axios from "axios"
 import React, { createContext, ReactNode, useEffect, useState } from "react"
+import { ECOM_BACKEND_URL } from "./ecom-backend-url"
 
 type OnlineStoreContextType = {
   edited: boolean
@@ -92,7 +93,7 @@ const updateSections = (
   console.log("--bug", inputValue)
   if (inputValue && iframeDocument) {
     axios
-      .post(`http://longvb.net/api-admin/pages/${currentPage.id}/preview`, {
+      .post(`${ECOM_BACKEND_URL}/api-admin/pages/${currentPage.id}/preview`, {
         page_settings: {
           sections: [...inputValue],
         },
@@ -123,7 +124,7 @@ const updateSection = (
     const element = iframeDocument.querySelector(`[ecom-id=${sectionId}]`)
     if (element && inputValue) {
       axios
-        .post(`http://longvb.net/api-admin/sections/${sectionId}/preview`, {
+        .post(`${ECOM_BACKEND_URL}/api-admin/sections/${sectionId}/preview`, {
           section_settings: {
             ...inputValue,
           },
@@ -166,7 +167,7 @@ const OnlineStoreProvider = ({ children }: Props) => {
     id: "index",
   })
   useEffect(() => {
-    axios.get("http://longvb.net/api-admin/pages").then(({ data }) => {
+    axios.get(`${ECOM_BACKEND_URL}/api-admin/pages`).then(({ data }) => {
       setPages(data.pages)
       setIsLoading(false)
     })
@@ -181,7 +182,7 @@ const OnlineStoreProvider = ({ children }: Props) => {
   }, [currentSections])
   useEffect(() => {
     if (iframe) {
-      iframe.src = `http://longvb.net${currentPage.path}`
+      iframe.src = `${ECOM_BACKEND_URL}${currentPage.path}`
     }
   }, [currentPage, iframe])
   return (

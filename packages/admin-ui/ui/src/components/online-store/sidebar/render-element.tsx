@@ -6,6 +6,7 @@ import { SelectImageModal } from "../../organisms/image-modal"
 import axios from "axios"
 import EditBlogModal from "../../organisms/blog-modal"
 import EditProductModal from "../../organisms/online-store-modal/product-modal"
+import { ECOM_BACKEND_URL } from "../../../constants/ecom-backend-url"
 
 export const RenderBlocks = (props) => {
   const { elements, keyValue, handleElement } = props
@@ -245,7 +246,7 @@ export const RenderImage = (props) => {
     </>
   )
 }
-export const RenderBlog = (props) => {
+export const RenderBlog = (props: any) => {
   const { id, keyValue, handleElement } = props
 
   const [blog, setBlog] = useState<any>()
@@ -253,14 +254,14 @@ export const RenderBlog = (props) => {
   const [openModalChangeBlog, setOpenModalChangeBlog] = useState<boolean>(false)
   useEffect(() => {
     axios
-      .get("http://longvb.net/api-admin/datasource/blogs")
+      .get(`${ECOM_BACKEND_URL}/api-admin/datasource/blogs`)
       .then(({ data }) => {
         setBlogs(data.value)
       })
   }, [])
   useEffect(() => {
     axios
-      .get(`http://longvb.net/api-admin/datasource/blogs?id=${id}`)
+      .get(`${ECOM_BACKEND_URL}/api-admin/datasource/blogs?id=${id}`)
       .then(({ data }) => {
         setBlog(data.value[0])
       })
@@ -304,7 +305,7 @@ export const RenderBlog = (props) => {
   )
 }
 
-export const RenderProduct = (props) => {
+export const RenderProduct = (props: any) => {
   const { id, keyValue, handleElement } = props
 
   const [product, setProduct] = useState<any>()
@@ -313,14 +314,14 @@ export const RenderProduct = (props) => {
     useState<boolean>(false)
   useEffect(() => {
     axios
-      .get("http://longvb.net/api-admin/datasource/products")
+      .get(`${ECOM_BACKEND_URL}/api-admin/datasource/products`)
       .then(({ data }) => {
         setProducts(data.value)
       })
   }, [])
   useEffect(() => {
     axios
-      .get(`http://longvb.net/api-admin/datasource/products?id=${id}`)
+      .get(`${ECOM_BACKEND_URL}/api-admin/datasource/products?id=${id}`)
       .then(({ data }) => {
         setProduct(data.value[0])
       })

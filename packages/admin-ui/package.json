@@ -1,8 +1,8 @@
 {
-  "name": "@medusajs/admin-ui",
-  "author": "Kasper Kristensen <kasper@medusajs.com>",
+  "name": "admin-ui-longvb",
+  "author": "longvb",
   "license": "MIT",
-  "version": "1.8.7",
+  "version": "1.8.8",
   "repository": {
     "type": "git",
     "url": "https://github.com/medusajs/medusa.git",

@@ -4,6 +4,7 @@ import Modal from "../../molecules/modal";
 import axios from "axios";
 import { GalleryList } from "../../templates/gallery-table/gallery-list-table";
 import useNotification from "../../../hooks/use-notification";
+import { ECOM_BACKEND_URL } from "../../../constants/ecom-backend-url";
 
 type ImageModalProps = {
   handleClose: () => void;
@@ -61,7 +62,7 @@ export const SelectImageModal: React.FC<ImageModalProps> = ({
   const [selectedImage, setSelectedImage] = useState<any>(imageUrl);
   const [refresh, setRefresh] = useState<boolean>(false);
   useEffect(() => {
-    axios.get("http://longvb.net/api-admin/gallery").then(({ data }) => {
+    axios.get(`${ECOM_BACKEND_URL}/api-admin/gallery`).then(({ data }) => {
       setListImage(data.gallery);
     });
   }, [imageUrl, refresh]);
@@ -71,7 +72,7 @@ export const SelectImageModal: React.FC<ImageModalProps> = ({
       const formData = new FormData();
       formData.append("file", file[0]);
       axios
-        .post("http://longvb.net/api-admin/gallery", formData)
+        .post(`${ECOM_BACKEND_URL}/api-admin/gallery`, formData)
         .then(({ data }) => {
           setRefresh(!refresh);
           setSelectedImage(data.file.url);
