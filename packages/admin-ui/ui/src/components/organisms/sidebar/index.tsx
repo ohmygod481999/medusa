@@ -1,20 +1,20 @@
-import { useAdminStore } from "medusa-react";
-import React, { useState } from "react";
+import { useAdminStore } from "medusa-react"
+import React, { useState } from "react"
 
-import { useFeatureFlag } from "../../../providers/feature-flag-provider";
-import BuildingsIcon from "../../fundamentals/icons/buildings-icon";
-import CartIcon from "../../fundamentals/icons/cart-icon";
-import CashIcon from "../../fundamentals/icons/cash-icon";
-import GearIcon from "../../fundamentals/icons/gear-icon";
-import GiftIcon from "../../fundamentals/icons/gift-icon";
-import SaleIcon from "../../fundamentals/icons/sale-icon";
-import TagIcon from "../../fundamentals/icons/tag-icon";
-import SwatchIcon from "../../fundamentals/icons/swatch-icon";
-import UsersIcon from "../../fundamentals/icons/users-icon";
-import SidebarMenuItem from "../../molecules/sidebar-menu-item";
-import UserMenu from "../../molecules/user-menu";
-import GalleryIcon from "../../fundamentals/icons/gallery-icon/gallery-icon";
-import EyeIcon from "../../fundamentals/icons/eye-icon";
+import { useFeatureFlag } from "../../../providers/feature-flag-provider"
+import BuildingsIcon from "../../fundamentals/icons/buildings-icon"
+import CartIcon from "../../fundamentals/icons/cart-icon"
+import CashIcon from "../../fundamentals/icons/cash-icon"
+import GearIcon from "../../fundamentals/icons/gear-icon"
+import GiftIcon from "../../fundamentals/icons/gift-icon"
+import SaleIcon from "../../fundamentals/icons/sale-icon"
+import TagIcon from "../../fundamentals/icons/tag-icon"
+import SwatchIcon from "../../fundamentals/icons/swatch-icon"
+import UsersIcon from "../../fundamentals/icons/users-icon"
+import SidebarMenuItem from "../../molecules/sidebar-menu-item"
+import UserMenu from "../../molecules/user-menu"
+import GalleryIcon from "../../fundamentals/icons/gallery-icon/gallery-icon"
+import EyeIcon from "../../fundamentals/icons/eye-icon"
 
 const ICON_SIZE = 20;
 
