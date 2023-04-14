@@ -25,19 +25,31 @@ const AddSectionModal: React.FC<addSectionModalProps> = ({
     })
   },[])
   return (
-    <Modal handleClose={handleClose}>
+    <Modal handleClose={handleClose} isLargeModal={false}>
       <Modal.Body>
         <Modal.Header handleClose={handleClose}>
-          <span className="inter-xlarge-semibold">Change Product</span>
+          <span className="inter-xlarge-semibold">Add section</span>
         </Modal.Header>
         <Modal.Content>
           <div className="flex max-w-full flex-wrap gap-[1%] overflow-y-scroll">
             {
               sections?sections.map((section:any)=>(
-                <div onClick={()=>{
+                <div
+                  style={{
+                    height: 200,
+                  }}
+                  onClick={()=>{
                   setSelectSection(section)
-                }} className="mb-3 basis-[32.666666%] items-center rounded border cursor-pointer overflow-hidden hover:bg-slate-50 relative">
-                  <iframe src={`http://longvb.net/api-admin/sections/${section.id}/preview-ui`} className="max-w-full pointer-events-none overflow-hidden"/>
+                }} className="mb-3 basis-[49%] items-center rounded border cursor-pointer overflow-hidden hover:bg-slate-50 relative">
+                  <iframe
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    src={`http://longvb.net/api-admin/sections/${section.id}/preview-ui`} className="max-w-full pointer-events-none overflow-hidden"/>
                   <p className="text-center py-1">{section.id}</p>
                   <input
                     type="checkbox"
