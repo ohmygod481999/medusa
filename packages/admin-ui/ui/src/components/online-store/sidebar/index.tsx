@@ -1,17 +1,17 @@
 import React, { IframeHTMLAttributes, useEffect, useState } from "react";
-
 import { renderElement } from "./render-element";
 import axios from "axios";
 import { ReactSortable } from "react-sortablejs";
 import { useOnlineStore } from "../../../constants/online-store";
 import { ECOM_BACKEND_URL } from "../../../constants/ecom-backend-url";
+import AddSectionModal from "../../organisms/online-store-modal/add-section-modal";
 
 export const OnlineStoreSidebarLeft = (props: {}) => {
   const { currentPage, setSectionId, setCurrentSections, currentSections } =
     useOnlineStore();
   const [sections, setSections] = useState<any>([]);
   const [sectionActive, setSectionactive] = useState<string>("");
-
+  const [openAddModalSection, setOpenAddModalSections] = useState<boolean>(false)
   useEffect(() => {
     axios
       .get(`${ECOM_BACKEND_URL}/api-admin/pages/${currentPage.id}`)
@@ -20,13 +20,13 @@ export const OnlineStoreSidebarLeft = (props: {}) => {
         setCurrentSections(sectionsData);
       });
   }, [currentPage.id]);
-
   const scrollToSection = (ecomId: string) => {
     setSectionactive(ecomId);
     setSectionId(ecomId);
     const iframe = document.querySelector("#iframe") as HTMLIFrameElement;
     const iframeDoc = iframe.contentDocument;
     const iframeWindow = iframe.contentWindow;
+
     if (iframeDoc && iframeWindow) {
       const targetElement = iframeDoc.querySelector(
         `[ecom-id="${ecomId}"]`
@@ -82,8 +82,33 @@ export const OnlineStoreSidebarLeft = (props: {}) => {
               </li>
             ))}
           </ReactSortable>
+          <li
+          className="flex cursor-pointer items-center gap-2 px-4 hover:text-cyan-60 text-cyan-70"
+          onClick={() => setOpenAddModalSections(true)}
+        >
+          <svg
+            className="bg-orange-80"
+            width="16px"
+            height="16px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="24" height="24" fill="white" />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M13 9C13 8.44772 12.5523 8 12 8C11.4477 8 11 8.44772 11 9V11H9C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H11V15C11 15.5523 11.4477 16 12 16C12.5523 16 13 15.5523 13 15V13H15C15.5523 13 16 12.5523 16 12C16 11.4477 15.5523 11 15 11H13V9ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12Z"
+              fill="#3276c3"
+            />
+          </svg>
+          Add Section
+        </li>
         </ul>
       </div>
+      {
+        openAddModalSection?<AddSectionModal currentPageId={currentPage.id} keyValue="dfasf" handleClose={()=>setOpenAddModalSections(false)} handleElement={setCurrentSections} />:''
+      }
     </div>
   );
 };
@@ -108,11 +133,10 @@ export const OnlineStoreSidebarRight = (props: {}) => {
     }
   }, [sectionId, currentSections]);
   useEffect(() => {
-    console.log(1111, elements);
     setInputValue({ elements });
-    setCurrentSections((prev) => {
+    setCurrentSections((prev:any) => {
       if (prev && prev.length >= 1) {
-        const index = prev.findIndex((section) => section.id === sectionId);
+        const index = prev.findIndex((section: any) => section.id === sectionId);
         if (index !== -1) {
           console.log("2222", prev[index]);
           prev[index] = {
@@ -126,9 +150,9 @@ export const OnlineStoreSidebarRight = (props: {}) => {
       return prev;
     });
   }, [elements]);
-  const handleElement = (e: any, key, keyValue, type) => {
+  const handleElement = (e: any, key:any, keyValue:any, type:any) => {
     if (type == "blocks") {
-      setElements((prev) => ({
+      setElements((prev:any) => ({
         ...prev,
         [key]: {
           ...prev[key],
@@ -136,7 +160,7 @@ export const OnlineStoreSidebarRight = (props: {}) => {
         },
       }));
     } else if (type == "image") {
-      setElements((prev) => ({
+      setElements((prev:any) => ({
         ...prev,
         [key]: {
           ...prev[key],
@@ -144,7 +168,7 @@ export const OnlineStoreSidebarRight = (props: {}) => {
         },
       }));
     } else if (type == "datasource") {
-      setElements((prev) => ({
+      setElements((prev:any) => ({
         ...prev,
         [key]: {
           ...prev[key],
@@ -152,7 +176,7 @@ export const OnlineStoreSidebarRight = (props: {}) => {
         },
       }));
     } else {
-      setElements((prev) => ({
+      setElements((prev:any) => ({
         ...prev,
         [key]: {
           ...prev[key],
